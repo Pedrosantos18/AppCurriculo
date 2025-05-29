@@ -39,6 +39,7 @@ import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
@@ -141,15 +142,15 @@ public class MainActivity extends AppCompatActivity {
             String s = "<!DOCTYPE html> <html> <head> <style>";
 
             if (paraWebView == false) {
-                s += "* {       box-sizing: border-box;       margin: 0;       padding: 0; }      body {       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;       background-color: #e0e0e0;       color: #222;       padding: 40px;     }      .container {       max-width: 800px;       margin: auto;       background-color: #fff;       padding: 40px 50px;       border-radius: 10px;       box-shadow: 0 0 10px rgba(0,0,0,0.1);     }      h1 {       font-size: 32px;       margin-bottom: 5px;     }      .social {       font-size: 14px;       color: #555;       margin-bottom: 30px;     }      .line {       height: 2px;       background-color: #ccc;       margin: 20px 0;     }      .section {       margin-bottom: 30px;     }      .section-title {       font-weight: bold;       font-size: 18px;       margin-bottom: 10px;       color: #003c8f;     }      .section-content {       font-size: 15px;       line-height: 1.8;       margin-top: 5px;     }      .section-content p {       margin-bottom: 10px;     }      .section-content br {       line-height: 2;     }  ";
+                s += "* {       box-sizing: border-box;       margin: 0;       padding: 0; }      body {       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;       background-color: #e0e0e0;       color: #222;       padding: 40px;     }      .container {       max-width: 800px;       margin: auto;       background-color: #fff;       padding: 40px 50px;       border-radius: 10px;       box-shadow: 0 0 10px rgba(0,0,0,0.1);     }      h1 {       font-size: 32px;       margin-bottom: 5px;     } h2 {       font-size: 20px;       margin-bottom: 5px;     }      .social {       font-size: 14px;       color: #555;       margin-bottom: 30px;     }      .line {       height: 2px;       background-color: #ccc;       margin: 20px 0;     }      .section {       margin-bottom: 30px;     }      .section-title {       font-weight: bold;       font-size: 18px;       margin-bottom: 10px;       color: #003c8f;     }      .section-content {       font-size: 15px;       line-height: 1.8;       margin-top: 5px;     }      .section-content p {       margin-bottom: 10px;     }      .section-content br {       line-height: 2;     }  ";
             }
             else{
-                s += "* {       box-sizing: border-box;       margin: 0;       padding: 0; }      body {       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;       background-color: #e0e0e0;       color: #222;       padding: 20px;     }      .container {       max-width: 800px;       margin: auto;       background-color: #fff;       padding: 20px 25px;       border-radius: 10px;       box-shadow: 0 0 10px rgba(0,0,0,0.1);     }      h1 {       font-size: 16px;       margin-bottom: 5px;     }      .social {       font-size: 7px;       color: #555;       margin-bottom: 15px;     }      .line {       height: 2px;       background-color: #ccc;       margin: 10px 0;     }      .section {       margin-bottom: 15px;     }      .section-title {       font-weight: bold;       font-size: 9px;       margin-bottom: 10px;       color: #003c8f;     }      .section-content {       font-size: 7px;       line-height: 1.8;       margin-top: 5px;     }      .section-content p {       margin-bottom: 5px;     }      .section-content br {       line-height: 2;     }  ";
+                s += "* {       box-sizing: border-box;       margin: 0;       padding: 0; }      body {       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;       background-color: #e0e0e0;       color: #222;       padding: 20px;     }      .container {       max-width: 800px;       margin: auto;       background-color: #fff;       padding: 20px 25px;       border-radius: 10px;       box-shadow: 0 0 10px rgba(0,0,0,0.1);     }      h1 {       font-size: 16px;       margin-bottom: 5px;     } h2 {       font-size: 10px;       margin-bottom: 5px;     }      .social {       font-size: 7px;       color: #555;       margin-bottom: 15px;     }      .line {       height: 2px;       background-color: #ccc;       margin: 10px 0;     }      .section {       margin-bottom: 15px;     }      .section-title {       font-weight: bold;       font-size: 9px;       margin-bottom: 10px;       color: #003c8f;     }      .section-content {       font-size: 7px;       line-height: 1.8;       margin-top: 5px;     }      .section-content p {       margin-bottom: 5px;     }      .section-content br {       line-height: 2;     }  ";
             }
             s+="</style></head><body>   <div class='container'>     <h1>" + prefs.getString("NOME", "") + "</h1>     " +
-                    "<h1>" + prefs.getString("CARGO", "") + "</h1>" +
-                    "<h1>" + prefs.getString("NUMERO", "") + "</h1>" +
-                    "<h1>" + prefs.getString("EMAIL", "") + "</h1>" +
+                    "<h2>" + prefs.getString("CARGO", "") + "</h2>" +
+                    "<h2>" + prefs.getString("NUMERO", "") + "</h2>" +
+                    "<h2>" + prefs.getString("EMAIL", "") + "</h2>" +
                     "<div class='social'>Redes sociais: <br>";
 
             for (int i = 1; i <= prefs.getInt("REDEQTD", 0); i++) {
@@ -320,7 +321,98 @@ public class MainActivity extends AppCompatActivity {
         }
 
         if (radioPago2.isChecked()) {
+            String s = "<!DOCTYPE html><html><head><style>";
 
+            if (paraWebView == false) {
+                s += "body {  font-family: 'Roboto', sans-serif;  background: #ffffff;  color: #333333;  margin: 0;  padding: 0;}.container {  width: 95%;  max-width: 900px;  margin: auto;  padding: 20px;}header { background-color: #7a0c0c;  color: white;  padding: 20px;  border-radius: 10px;}.header-left h1 {  font-size: 2em;  margin: 0;}.job-title {  font-size: 1.2em;  margin: 5px 0;}.socials {  font-size: 0.9em;  color: #f0c0c0;}.header-right p {  margin: 5px 0;  font-size: 0.95em;}section {  margin-top: 30px;}section h2 {  color: #7a0c0c;  border-left: 4px solid #7a0c0c;  padding-left: 10px;  margin-bottom: 10px;}.skill {  margin-bottom: 15px;}.skill span {  display: block;  font-weight: bold;  margin-bottom: 5px;}.bar {  background: #ddd;} .header-left{ min-height: 100px width: 400px;} .header-right{ float: right; width: 260px;}";
+            }
+            else{
+                s += "body {  font-family: 'Roboto', sans-serif;  background: #ffffff;  color: #333333;  margin: 0;  padding: 0; font-size: 8px;}.container {  width: 95%;  max-width: 450px;  margin: auto;  padding: 10px;}header { background-color: #7a0c0c;  color: white;  padding: 10px;  border-radius: 5px;}.header-left h1 {  font-size: 16px;  margin: 0;}.job-title {  font-size: 9px;  margin: 5px 0;}.socials {  font-size: 7px;  color: #f0c0c0;}.header-right p {  margin: 5px 0;  font-size: 7px;}section {  margin-top: 15px;}section h2 {  color: #7a0c0c;  border-left: 4px solid #7a0c0c;  padding-left: 5px;  margin-bottom: 5px;}.skill {  margin-bottom: 7px;}.skill span {  display: block;  font-weight: bold;  margin-bottom: 5px;}.bar {  background: #ddd;} .header-left{ min-height: 50px width: 200px;} .header-right{ float: right; width: 130px;}";
+            }
+            s+= "</style></head><body>  <div class='container'><header>";
+
+            s += "<div class='header-right'>"
+                    + "<p><strong>Telefone: </strong>" + prefs.getString("NUMERO", "") + "</p>"
+                    + "<p><strong>Email: </strong>" + prefs.getString("EMAIL", "") + "</p> </div>";
+
+            s += "<div class='header-left'><h1>" + prefs.getString("NOME", "") + "</h1>";
+
+            s += "<p class='job-title'>" + prefs.getString("CARGO", "") + "</p><p class='socials'>";
+
+            for (int i = 1; i <= prefs.getInt("REDEQTD", 0); i++) {
+                s += prefs.getString("SITE" + i, "") + ": " + prefs.getString("LINK" + i, "") + "<br>";
+            }
+
+            s += "</p>      </div>     </header>";
+
+            s += "<section>        <h2>Informações sobre mim</h2>        <p>";
+            s += prefs.getString("SOBREMIM", "");
+            s += "</p>      </section>";
+
+            if (prefs.getInt("PROFQTD", 0) > 0) {
+                s += "<section><h2>Experiência profissional</h2>       ";
+
+                for (int i = 1; i <= prefs.getInt("PROFQTD", 0); i++) {
+                    s += "<p><strong>";
+
+                    if (!prefs.getString("PROFCOMECOMONTH" + i, "").equals("")) {
+                        s += prefs.getString("PROFCOMECOMONTH" + i, "") + "/" + prefs.getString("PROFCOMECOYEAR" + i, "") + " - ";
+                    }
+
+                    if (!prefs.getString("PROFFINALMONTH" + i, "").equals("")) {
+                        if (prefs.getInt("PROFEMPREGOATUAL" + i, 0) != 1) {
+                            s += prefs.getString("PROFFINALMONTH" + i, "") + "/" + prefs.getString("PROFCOMECOYEAR" + i, "");
+
+                        }
+                    }
+                    s += " — " + prefs.getString("PROFEMPRESA" + i, "") + "</strong></p>";
+
+
+                    s += "<p>" + prefs.getString("PROFDESCRICAO" + i, "") + "</p>";
+                }
+
+                s+= "</section>";
+            }
+
+            if (prefs.getInt("ACADQTD", 0) > 0) {
+                s += "<section><h2>Formação acadêmica</h2>       ";
+
+                for (int i = 1; i <= prefs.getInt("ACADQTD", 0); i++) {
+                    s += "<p><strong>";
+
+                    if (!prefs.getString("ACADCOMECOMONTH" + i, "").equals("")) {
+                        s += prefs.getString("ACADCOMECOMONTH" + i, "") + "/" + prefs.getString("ACADCOMECOYEAR" + i, "") + " - ";
+                    }
+
+                    if (!prefs.getString("ACADFINALMONTH" + i, "").equals("")) {
+                        if (prefs.getInt("ACADEMPREGOATUAL" + i, 0) != 1) {
+                            s += prefs.getString("ACADFINALMONTH" + i, "") + "/" + prefs.getString("ACADFINALYEAR" + i, "");
+
+                        }
+                    }
+
+                    s += "    " + prefs.getString("ACADEMPRESA" + i, "") + "</strong></p>";
+
+                    s += "<p>" + prefs.getString("ACADDESCRICAO" + i, "") + "</p>";
+                }
+
+                s+= "</section>";
+            }
+
+            if (!prefs.getString("COMPETENCIAS", "").equals("")) {
+                s += "   <section><h2>Competências</h2>       <div><p>";
+                s += prefs.getString("COMPETENCIAS", "") + "</p>     </div> </section>     ";
+            }
+
+            if (!prefs.getString("INFORMACOESAD", "").equals("")) {
+                s += "   <section><h2>Informações adicionais</h2>       <div><p>";
+                s += prefs.getString("INFORMACOESAD", "") + "</p>     </div> </section>           ";
+            }
+
+            s +=" </div></body></html>";
+
+            editor.putString("CURRICULOHTML", s);
+            editor.apply();
         }
     }
 
@@ -1540,6 +1632,8 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
 
 
         AdView adView = findViewById(R.id.banner_ad_view);
