@@ -9,7 +9,12 @@ pluginManagement {
         }
         mavenCentral()
         gradlePluginPortal()
-        maven { url 'https://jitpack.io' }
+        maven {
+            url 'https://jitpack.io'
+        }
+        maven {
+            url 'https://mvnrepository.com/artifact/org.xhtmlrenderer/flying-saucer-pdf-openpdf'
+        }
     }
 }
 dependencyResolutionManagement {
@@ -17,7 +22,9 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
-        maven { url 'https://jitpack.io' }
+        maven {
+            url 'https://jitpack.io'
+        }
     }
 }
 

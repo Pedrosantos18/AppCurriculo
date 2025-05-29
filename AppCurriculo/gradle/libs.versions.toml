@@ -1,21 +1,27 @@
 [versions]
 agp = "8.9.0"
-junit = "4.13.2"
-junitVersion = "1.1.5"
+androidPdfViewer = "2.8.2"
+flyingSaucerPdf = "9.1.22"
 espressoCore = "3.5.1"
 appcompat = "1.6.1"
+itext7Core = "7.1.9"
 material = "1.10.0"
 activity = "1.8.0"
 constraintlayout = "2.1.4"
+identityJvm = "202411.1"
+playServicesAds = "24.2.0"
 
 [libraries]
-junit = { group = "junit", name = "junit", version.ref = "junit" }
-ext-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
+android-pdf-viewer = { module = "com.github.barteksc:android-pdf-viewer", version.ref = "androidPdfViewer" }
+flying-saucer-pdf = { module = "org.xhtmlrenderer:flying-saucer-pdf", version.ref = "flyingSaucerPdf" }
 espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
 appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+itext7-core = { module = "com.itextpdf:itext7-core", version.ref = "itext7Core" }
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
 constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
+identity-jvm = { group = "com.android.identity", name = "identity-jvm", version.ref = "identityJvm" }
+play-services-ads = { group = "com.google.android.gms", name = "play-services-ads", version.ref = "playServicesAds" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

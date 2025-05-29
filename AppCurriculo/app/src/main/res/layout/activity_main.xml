@@ -16,6 +16,26 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
+            <RelativeLayout
+                android:id="@+id/ad_holder"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:gravity="bottom" >
+
+                <!-- Ad view container that fills the width of the screen and adjusts its
+                height to the content of the ad. -->
+                <com.google.android.gms.ads.AdView
+                    xmlns:ads="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/banner_ad_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_alignParentBottom="true"
+                    ads:adSize="BANNER"
+                    ads:adUnitId="ca-app-pub-3940256099942544/6300978111" />
+            </RelativeLayout>
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -35,7 +55,8 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Nome: " />
+                    android:hint="Nome: "
+                    android:id="@+id/nome"/>
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -47,7 +68,8 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Cargo: " />
+                    android:hint="Cargo: "
+                    android:id="@+id/cargo"/>
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -60,7 +82,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="phone"
-                    android:hint="Número: " />
+                    android:hint="Número: "
+                    android:id="@+id/numero"/>
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -74,7 +97,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="textEmailAddress"
-                    android:hint="E-mail: " />
+                    android:hint="E-mail: "
+                    android:id="@+id/email"/>
             </com.google.android.material.textfield.TextInputLayout>
 
             <Button
@@ -106,7 +130,8 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Sobre mim: " />
+                    android:hint="Sobre mim: "
+                    android:id="@+id/sobreMim"/>
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -177,7 +202,8 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Competências: " />
+                    android:hint="Competências: "
+                    android:id="@+id/competencias"/>
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -190,7 +216,8 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Informações adicionais: " />
+                    android:hint="Informações adicionais: "
+                    android:id="@+id/informacoesAd"/>
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -227,7 +254,7 @@
             </RadioGroup>
 
             <Button
-                android:id="@+id/Visualizacao"
+                android:id="@+id/visualizacao"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
@@ -237,7 +264,7 @@
                 android:text="Visualização do currículo" />
 
             <Button
-                android:id="@+id/Criar"
+                android:id="@+id/criar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -262,22 +289,6 @@
                     android:layout_marginHorizontal="10dp"
                     android:checked="true"
                     android:text=".pdf" />
-
-                <RadioButton
-                    android:id="@+id/docx"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:layout_marginHorizontal="10dp"
-                    android:text=".docx" />
-
-                <RadioButton
-                    android:id="@+id/png"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:layout_marginHorizontal="10dp"
-                    android:text=".png" />
 
                 <RadioButton
                     android:id="@+id/txt"
